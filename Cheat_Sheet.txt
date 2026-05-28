@@ -1,0 +1,25 @@
+SELECT DISTINCT
+    e.Employee_ID,
+    e.First_Name,
+    e.Last_Name,
+    e.Age,
+    e.Gender,
+    e.Salary,
+    e.Experience_Years,
+    e.City,
+    e.State,
+    e.Country,
+    e.Email,
+    d.Joining_Date,
+    d.Manager_Name,
+    d.Performance_Score,
+    d.Project_Count,
+    e.Bonus,
+    e.Work_Mode,
+    d.Status,
+    d.Department_ID,
+    d.Department
+FROM correct_company_employees e
+INNER JOIN department_data d
+    ON e.Department_ID = d.Department_ID
+WHERE e.First_Name LIKE 'A%' and Joining_Date <> "None" ;
